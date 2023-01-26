@@ -1,0 +1,62 @@
+jsonpath course
+
+
+YAML
+
+ARRAY OR LISTS
+
+Fruits:
+
+- Orange
+- Apple
+
+The dash means that it is an element of an array or list.
+
+
+DICTIONARY OR MAp
+
+Banana:
+  Calories: 105
+  Fat: 0.4 g
+  
+  
+To Store information about an object, like a car we use a Dictionary:
+
+Color: blue
+Model: Corvette
+Price: $50
+
+
+if you need to split the model into years then you can use a dictionary within a dictionary
+
+ex:
+
+Color: blue
+Model:
+  Name: Corvette
+  Year: 1995
+Price: $50
+
+
+If you want to store list of multiple items of the same object, say cars with different colours then use a list
+
+
+ex:
+simple list 
+
+- Blue Corvette
+- Grey Corvette
+- Red Corvette
+
+
+if we want all the info like we had before we create a list of dictionairies, we then change our list from a list of strings to a list of dictionaries
+
+- Blue Corvette
+  Model:
+    Name: Corvette
+    Model: 1995
+Dictionaries are Unordered
+List  are Ordered
+
+
+    
