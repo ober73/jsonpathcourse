@@ -58,5 +58,154 @@ if we want all the info like we had before we create a list of dictionairies, we
 Dictionaries are Unordered
 List  are Ordered
 
+LIST OF DICTIONARIES
 
+employees:
+    - 
+        name: john
+        gender: male
+        age: 24
+        
+        
+employees:
+    -
+        name: john
+        gender: male
+        age: 24
+    -
+        name: sarah
+        gender: female
+        age: 28
+        
+        
+employee:
+    name: john
+    gender: male
+    age: 24
+    address:
+        city: edison
+        state: 'new jersey'
+        country: 'united states'
+    payslips:
+        -
+            month: june
+            amount: 1400
+        -
+            month: july
+            amount: 2400
+        -
+            month: august
+            amount: 3400
     
+
+YAML uses indentation JSon uses curly brackets etc
+
+Everything inside a pair of curly brackets forms a dictionary in JSON
+
+In Json square brackets define a list/array
+
+items in a list are separated by a comma
+
+website
+
+json2yaml.com To convert 
+
+Json path is a query language to extract data from json
+
+the . (dot) helps you select a particular field within a dictionary
+
+so 
+
+car.color 
+
+car here is a dictionary and color is another dictionary
+
+the top name of dictionary is known as the root element and is denoted by a $ sign
+
+so 
+
+{
+
+  "car": {
+  
+  etc..........
+  
+  
+a query then starts with that sign
+
+$.car
+
+
+All output from a json is available within a pair of square brackets
+
+
+to get an element from a list/array use a square bracket and number of its position in the list
+
+so 
+
+[
+"car",
+"bus",
+"truck"
+]
+
+0
+1
+2
+
+if you want to elements then first and last from above then:
+
+$[0,2]
+
+
+if root element is a dictionary then our query has to start with a . (dot)
+
+$.  (dot denotes a dictionary)
+
+
+so to query a list withing two dictionaries:
+
+$.car.wheels[1]
+
+we did not use a dot after wheels because it is an array
+
+but we want the model inside of the array which is a dictionary
+
+$.car.wheels[1].model
+
+CRITERIA
+
+to query inside of an array with criteria use the ?
+
+to check if items in the list are greater than 40 then use @ symbol
+
+example
+
+$[?(@>40)}
+
+EX:
+
+$.car.wheels[?(@.location == "rear-right")].model
+
+WILD CARDS
+
+to get all colors
+
+query would be 
+
+$.*.color
+
+get all the models of the wheels in a list
+
+$[*].model
+
+to get the models of both bus and cars then:
+
+$.*.wheels[*].model
+
+
+
+
+  
+  
+  
