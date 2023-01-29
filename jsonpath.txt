@@ -203,6 +203,68 @@ to get the models of both bus and cars then:
 
 $.*.wheels[*].model
 
+LISTS
+
+to get items in a list from 1 to 3
+
+query:
+
+$[0:4]
+
+to step over ex: 2 items
+
+$[0:8:2]
+
+to get last item in list
+
+$[-1] does not work in all 
+
+so $[-1:0]
+
+or [-1:]
+
+
+JSON PATH with KUBERNETES
+
+kubectl get nodes -o json
+
+form json path query
+
+ust json path query with kubectl
+
+EX:
+
+kubectl get pods -o=jsonpath='{.items[0].spec.containers[0].image }'
+
+
+{"\n"}
+{"\t"}
+
+LOOPS - RANGE
+
+iterate through items
+
+'{range .items[*]} range means for each item
+
+CUSTOM COLUMNS
+
+EX:
+
+kubectl get nodes -o=custom-columns=<COLUMN NAME>:<JSON PATH>
+
+EX2:
+
+kubectl get nodes -o=custom-columns=NODE:.metadata.name ,CPU: .status.capacity.cpu
+
+
+kubectl get nodes --sort-by= .metadata.name
+
+
+
+
+
+
+
 
 
 
